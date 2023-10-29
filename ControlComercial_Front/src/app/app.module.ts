@@ -7,6 +7,8 @@ import { NavBarLoginComponent } from './components/nav-bar-login/nav-bar-login.c
 import { HomeComponentComponent } from './components/home-component/home-component.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ProductosComponent } from './components/productos/productos.component';
+import { PerfilOwnerComponent } from './components/perfil-owner/perfil-owner.component';
+import { PerfilWorkerComponent } from './components/perfil-worker/perfil-worker.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { ProductosComponent } from './components/productos/productos.component';
     NavBarLoginComponent,
     HomeComponentComponent,
     NavBarComponent,
-    ProductosComponent
+    ProductosComponent,
+    PerfilOwnerComponent,
+    PerfilWorkerComponent
   ],
   imports: [
     BrowserModule,
