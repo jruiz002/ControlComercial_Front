@@ -1,0 +1,145 @@
+<div class="fondo">
+  <app-nav-bar></app-nav-bar>
+
+
+  <div class="d-flex justify-content-between mt-3">
+    <div class="ms-5 mt-1">
+      
+    </div>
+
+
+    <!-- <div class="horizontal">
+      <div class="input-group ms-5 mt-3 mb-3 me-3">
+        <input name="filter" type="text" class="form-control confButton" placeholder="Búsqueda por producto" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <span class="spanSearch input-group-text"><img src="../../../assets/images/lupa.png" class="img-spanSeach"></span>
+        
+      </div>
+      <div class="input-group ms-5 mt-3 mb-3 me-3">
+        <input  name="filter" type="text" class="form-control confButton" placeholder="Búsqueda por proveedor" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <span class="spanSearch input-group-text"><img src="../../../assets/images/lupa.png" class="img-spanSeach"></span>
+      </div>
+    </div> -->
+
+    <div class="horizontal">
+        <p style="font-size: 50px;">INVENTARIO</p>
+    </div>
+
+    <div>
+       
+    </div>
+
+  </div>
+
+  <div class="table">
+      <h1></h1>
+      <table class="table table mt-3">
+        <thead style="background-color: #FFD60A;">
+          <tr>
+            <th scope="col">NOMBRE DE PRODUCTO</th>
+            <th scope="col">PROVEEDOR</th>
+            <th scope="col">PRECIO</th>
+            <th scope="col">STOCK</th>
+            <th scope="col">VENDER</th>
+            <th scope="col">EDITAR</th>
+            <th scope="col">ELIMINAR</th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr class="texto">
+            <td>{{1}}</td>
+            <td>{{1}}</td>
+            <td>Q. {{1}}</td>
+            <td>{{1}}</td>
+            <td>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalSellProduct"><img src="../../../assets/images/cart.png" alt="" class="img-icons"></button>
+            </td>
+            <td>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditarProducto"><img src="../../../assets/images/editar.png" alt="" class="img-icons"></button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEliminarProducto"><img src="../../../assets/images/basura.png" alt="" class="img-icons"></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- MODAL PARA VENDER UN PRODUCTO -->
+    <div class="modal fade" id="exampleModalSellProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="container">
+              <div class="modal-content">
+                  <div class="contact-box">
+                      <div class="left"></div>
+                      <div class="right">
+                          <div class="position-relative">
+                              <button type="button" class="btn-close position-absolute top-0 start-100 translate-middle" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <h4>Realizar Venta</h4>
+                          <span class="spanInfo">Fecha de Venta</span>
+                          <input name="fecha" type="date" class="field" placeholder="Fecha de la venta">
+                          <span class="spanInfo">Cantidad a vender</span>
+                          <input name="cantidad" type="text" class="field" placeholder="Cantidad">
+                          <button  class="buttonModalNewUser mb-3" data-bs-dismiss="modal">Vender</button>
+                          <button style="background: #F8333C;" class="buttonModalNewUser" data-bs-dismiss="modal">Cancelar</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+</div>
+
+
+ <!-- MODAL UPDATE PORDUCTO -->
+ <div class="modal fade" id="modalEditarProducto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="container">
+            <div class="modal-content">
+                <div class="contact-box">
+                    <div class="left"></div>
+                    <div class="right">
+                        <div class="position-relative">
+                            <button type="button" class="btn-close position-absolute top-0 start-100 translate-middle" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <h2>Actualizar</h2>
+                        <span class="spanInfo">Nombre</span>
+                        <input name="name" type="text" class="field" placeholder="Nombre">
+                        <span class="spanInfo">Proveedor</span>
+                        <input name="direccion" type="text" class="field" placeholder="Proveedor">
+                        <span class="spanInfo">Precio</span>
+                        <input  name="phone" type="text" class="field" placeholder="Precio">
+                        <span class="spanInfo">Stock</span>
+                        <input  name="email" type="text" class="field" placeholder="Stock">
+                        <button  class="buttonModalNewUser" data-bs-dismiss="modal">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+    <!-- MODAL PARA ELIMINAR UNA SUCURSAL -->
+    <div class="modal fade" id="modalEliminarProducto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="container">
+                <div class="modal-content">
+                    <div class="contact-box">
+                        <div class="left"></div>
+                        <div class="right">
+                            <div class="position-relative">
+                                <button type="button" class="btn-close position-absolute top-0 start-100 translate-middle" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <h4>¿Está seguro de eliminar este Producto?</h4>
+                            <button  class="buttonModalNewUser mb-3" data-bs-dismiss="modal">Si</button>
+                            <button style="background: #F8333C;" class="buttonModalNewUser" data-bs-dismiss="modal">No</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+
+
+
+
