@@ -25,17 +25,17 @@
     </div>
 
     <div class="empresas row">
-        <div class="card me-3 mt-3 ms-3" style="width: 18rem;">
+        <div *ngFor="let sede of arraySedes" class="card me-3 mt-3 ms-3" style="width: 18rem;">
             <img class="card-img-top" src="../../../assets/images/sedesIcon.jpg" alt="Imagen Empresa">
             <div class="card-body">
-                <h5 class="card-title"><strong>Sede</strong></h5>
+                <h5 class="card-title"><strong>{{sede.name}}</strong></h5>
                 <!-- Modal 1 -->
                 <button type="button" class="btn btn-link" data-bs-toggle="modal"
                     data-bs-target="#exampleModalDeleteCompany"><img src="../../../assets/images/eliminar.png" alt="#"
                         class="img-icon"></button>
 
                 <!-- Modal 2 -->
-                <button  type="button" class="btn btn-link" data-bs-toggle="modal"
+                <button (click)="verSede(sede.name)" type="button" class="btn btn-link" data-bs-toggle="modal"
                     data-bs-target="#exampleModalUpdateCompany"><img src="../../../assets/images/editar.png" alt="#"
                         class="img-icon"></button>
                 <!-- Modal 3 -->
@@ -91,8 +91,8 @@
                                 </div>
                                 <h2>Actualizar</h2>
                                 <span class="spanInfo">Nombre</span>
-                                <input name="name" type="text" class="field" placeholder="Nombre">
-                                <button class="buttonModalNewUser" data-bs-dismiss="modal">Actualizar</button>
+                                <input [(ngModel)]="this.updateSede.name" name="name" type="text" class="field" placeholder="Nombre">
+                                <button (click)="editarSede()" class="buttonModalNewUser" data-bs-dismiss="modal">Actualizar</button>
                             </div>
                         </div>
                     </div>
@@ -115,8 +115,8 @@
                                 <h2>Agregar Sede</h2>
                                 <form #addCompanyForm>
                                     <span class="spanInfo">Nombre</span>
-                                    <input name="name" type="text" class="field" placeholder="Nombre">
-                                    <button class="btnAddCompany" data-bs-dismiss="modal">Guardar</button>
+                                    <input [(ngModel)]="name" name="name" type="text" class="field" placeholder="Nombre">
+                                    <button (click)="agregarSede()" class="btnAddCompany" data-bs-dismiss="modal">Guardar</button>
                                 </form>
                             </div>
                         </div>

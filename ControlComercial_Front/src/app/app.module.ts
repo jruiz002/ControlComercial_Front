@@ -11,6 +11,8 @@ import { PerfilOwnerComponent } from './components/perfil-owner/perfil-owner.com
 import { PerfilWorkerComponent } from './components/perfil-worker/perfil-worker.component';
 import { SedesComponent } from './components/sedes/sedes.component';
 import { EstadisticasComponent } from './components/estadisticas/estadisticas.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { EstadisticasComponent } from './components/estadisticas/estadisticas.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
