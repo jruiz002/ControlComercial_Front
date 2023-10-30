@@ -4,13 +4,17 @@ import { HomeComponentComponent } from './components/home-component/home-compone
 import { ProductosComponent } from './components/productos/productos.component';
 import { PerfilOwnerComponent } from './components/perfil-owner/perfil-owner.component';
 import { PerfilWorkerComponent } from './components/perfil-worker/perfil-worker.component';
+import { SedesComponent } from './components/sedes/sedes.component';
+import { EstadisticasComponent } from './components/estadisticas/estadisticas.component';
 
 
 const routes: Routes = [
   {path:'', component: HomeComponentComponent},
   {path:"productos", component:ProductosComponent},
   {path:"perfilOwner", component:PerfilOwnerComponent},
-  {path:"perfilWorker", component:PerfilWorkerComponent}
+  {path:"perfilWorker", component:PerfilWorkerComponent},
+  {path:"sedes", component:SedesComponent},
+  {path:"estadisticas", component:EstadisticasComponent}
 
 ];
 
