@@ -10,7 +10,7 @@ import { EstadisticasComponent } from './components/estadisticas/estadisticas.co
 
 const routes: Routes = [
   {path:'', component: HomeComponentComponent},
-  {path:"productos", component:ProductosComponent},
+  {path:"productos/:idSede", component:ProductosComponent},
   {path:"perfilOwner", component:PerfilOwnerComponent},
   {path:"perfilWorker", component:PerfilWorkerComponent},
   {path:"sedes", component:SedesComponent},

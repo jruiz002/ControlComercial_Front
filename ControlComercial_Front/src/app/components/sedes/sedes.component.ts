@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Campus } from 'src/app/Models/Campus';
 import { NavBarLoginService } from 'src/app/services/nav-bar-login.service';
 import { SedeService } from 'src/app/services/sede.service';
@@ -18,7 +19,10 @@ export class SedesComponent implements OnInit{
   
   constructor(
     private sedesRest: SedeService,
-    private navBarLoginRest: NavBarLoginService
+    private navBarLoginRest: NavBarLoginService,
+    private router: Router,
+
+    
   ){
     this.sede = new Campus("", "", "", 0);
   }
@@ -106,6 +110,12 @@ export class SedesComponent implements OnInit{
         });
       }
     })
+  }
+
+
+  redirigirProductos(idSede: string){
+    this.router.navigateByUrl("/productos/" + idSede );
+
   }
 
   
