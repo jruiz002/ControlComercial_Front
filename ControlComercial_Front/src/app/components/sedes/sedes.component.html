@@ -11,7 +11,7 @@
                 <span></span>
                 <span></span>
                 <span></span>
-                Agregar 
+                Agregar Sede
                 </button>
             <button class="buttonHome me-3 mt-1 mb-3" data-bs-toggle="modal" data-bs-target="Colocar la vista" 
                 type="button">
@@ -30,7 +30,7 @@
             <div class="card-body">
                 <h5 class="card-title"><strong>{{sede.name}}</strong></h5>
                 <!-- Modal 1 -->
-                <button type="button" class="btn btn-link" data-bs-toggle="modal"
+                <button (click)="catchSedeEliminar(sede._id)" type="button" class="btn btn-link" data-bs-toggle="modal"
                     data-bs-target="#exampleModalDeleteCompany"><img src="../../../assets/images/eliminar.png" alt="#"
                         class="img-icon"></button>
 
@@ -65,7 +65,7 @@
                                         data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <h4>¿Está seguro de eliminar esta sede?</h4>
-                                <button class="buttonModalNewUser mb-3" data-bs-dismiss="modal">Si</button>
+                                <button (click)="eliminarSede()"  class="buttonModalNewUser mb-3" data-bs-dismiss="modal">Si</button>
                                 <button style="background: #F8333C;" class="buttonModalNewUser"
                                     data-bs-dismiss="modal">No</button>
                             </div>

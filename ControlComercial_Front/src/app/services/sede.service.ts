@@ -34,5 +34,8 @@ export class SedeService {
     return this.http.get(environment.baseUrl + "Campus/verSede/" + nameSede, {headers: this.htppOptions})
   }
   
+  eliminarSede(idSede: string){
+    return this.http.delete(environment.baseUrl + "Campus/eliminarSede/" + idSede, {headers: this.htppOptions})
+  }
 
 }

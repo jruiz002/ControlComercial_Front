@@ -30,7 +30,6 @@ export class SedesComponent implements OnInit{
   ngOnInit(): void {
     this.verSedes();
   }
-
   
   // Metodo para ver sedes
   verSedes(){
@@ -115,7 +114,28 @@ export class SedesComponent implements OnInit{
 
   redirigirProductos(idSede: string){
     this.router.navigateByUrl("/productos/" + idSede );
+  }
 
+  // Variable que captura el id de la sede para eliminar
+  idSedeEliminar: string = "";
+  catchSedeEliminar(idSede: string){
+    this.idSedeEliminar = idSede;
+  }
+
+  eliminarSede(){
+    this.sedesRest.eliminarSede(this.idSedeEliminar).subscribe({
+      next: (res: any) => {
+        Swal.fire({
+          title: res.message,
+          icon: 'success',
+          timer: 2000
+        });
+        this.verSedes()
+      },  
+      error: (err) => {
+        console.log(err)
+      }
+    })
   }
 
   
