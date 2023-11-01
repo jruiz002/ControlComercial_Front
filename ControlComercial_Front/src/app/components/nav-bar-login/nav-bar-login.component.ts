@@ -37,7 +37,7 @@ export class NavBarLoginComponent implements OnInit{
         if (this.navBarRestLogin.getUser().role === "Dueño") {
           this.router.navigateByUrl("sedes");
         } else if (this.navBarRestLogin.getUser().role === "Trabajador"){
-          this.router.navigateByUrl("productos");
+          this.router.navigateByUrl("productos/" + this.navBarRestLogin.getUser().idSede);
         }
       },
       error: (err) => {

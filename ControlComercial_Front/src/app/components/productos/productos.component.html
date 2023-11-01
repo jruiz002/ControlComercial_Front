@@ -53,20 +53,21 @@
             <th scope="col">ELIMINAR</th>
           </tr>
         </thead>
-        <tbody >
+        <tbody *ngFor="let product of arrayProductos">
           <tr class="texto">
-            <td>{{1}}</td>
-            <td>{{1}}</td>
-            <td>Q. {{1}}</td>
-            <td>{{1}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.nombreProveedor}}</td>
+            <td>Q. {{product.price}}</td>
+            <td>{{product.amount}}</td>
+            
             <td>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalSellProduct"><img src="../../../assets/images/cart.png" alt="" class="img-icons"></button>
+                <button  type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalSellProduct"><img src="../../../assets/images/cart.png" alt="" class="img-icons"></button>
             </td>
             <td>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditarProducto"><img src="../../../assets/images/editar.png" alt="" class="img-icons"></button>
+              <button (click)="verProducto(product._id)" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditarProducto"><img src="../../../assets/images/editar.png" alt="" class="img-icons"></button>
             </td>
             <td>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEliminarProducto"><img src="../../../assets/images/basura.png" alt="" class="img-icons"></button>
+                <button  (click)="verProducto(product._id)" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEliminarProducto"><img src="../../../assets/images/basura.png" alt="" class="img-icons"></button>
             </td>
           </tr>
         </tbody>
@@ -86,14 +87,14 @@
                               </div>
                               <h4>Agregar Producto</h4>
                               <span class="spanInfo">Nombre</span>
-                              <input name="nombre" type="String" class="field" placeholder="Nombre">
+                              <input [(ngModel)] ="name" name="nombre" type="String" class="field" placeholder="Nombre">
                               <span class="spanInfo">Precio</span>
-                              <input name="precio" type="String" class="field" placeholder="Precio">
+                              <input [(ngModel)] ="price"  name="precio" type="String" class="field" placeholder="Precio">
                               <span class="spanInfo">Cantidad</span>
-                              <input name="cantidad" type="text" class="field" placeholder="Cantidad">
+                              <input [(ngModel)] ="amount"  name="cantidad" type="text" class="field" placeholder="Cantidad">
                               <span class="spanInfo">Proveedor</span>
-                              <input name="proveedor" type="text" class="field" placeholder="Proveedor">
-                              <button  class="buttonModalNewUser mb-3" data-bs-dismiss="modal">Agregar</button>
+                              <input [(ngModel)] ="nombreProveedor"  name="proveedor" type="text" class="field" placeholder="Proveedor">
+                              <button (click)="agregarProducto()"  class="buttonModalNewUser mb-3" data-bs-dismiss="modal">Agregar</button>
                               <button style="background: #F8333C;" class="buttonModalNewUser" data-bs-dismiss="modal">Cancelar</button>
                           </div>
                       </div>
@@ -141,14 +142,14 @@
                         </div>
                         <h2>Actualizar</h2>
                         <span class="spanInfo">Nombre</span>
-                        <input name="name" type="text" class="field" placeholder="Nombre">
+                        <input [(ngModel)]="updateProducto.name" name="name" type="text" class="field" placeholder="Nombre">
                         <span class="spanInfo">Proveedor</span>
-                        <input name="direccion" type="text" class="field" placeholder="Proveedor">
+                        <input [(ngModel)]="updateProducto.nombreProveedor" name="nombreProveedor" type="text" class="field" placeholder="Proveedor">
                         <span class="spanInfo">Precio</span>
-                        <input  name="phone" type="text" class="field" placeholder="Precio">
+                        <input [(ngModel)]="updateProducto.price" name="price" type="text" class="field" placeholder="Precio">
                         <span class="spanInfo">Stock</span>
-                        <input  name="email" type="text" class="field" placeholder="Stock">
-                        <button  class="buttonModalNewUser" data-bs-dismiss="modal">Guardar</button>
+                        <input [(ngModel)]="updateProducto.amount" name="amount" type="text" class="field" placeholder="Stock">
+                        <button (click)="editarProducto()" class="buttonModalNewUser" data-bs-dismiss="modal">Guardar</button>
                     </div>
                 </div>
             </div>
@@ -168,7 +169,7 @@
                                 <button type="button" class="btn-close position-absolute top-0 start-100 translate-middle" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <h4>¿Está seguro de eliminar este Producto?</h4>
-                            <button  class="buttonModalNewUser mb-3" data-bs-dismiss="modal">Si</button>
+                            <button (click)="eliminarProducto()"  class="buttonModalNewUser mb-3" data-bs-dismiss="modal">Si</button>
                             <button style="background: #F8333C;" class="buttonModalNewUser" data-bs-dismiss="modal">No</button>
                         </div>
                     </div>
