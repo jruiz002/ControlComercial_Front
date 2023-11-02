@@ -195,3 +195,28 @@ h4{
 	border-style: inset;
 }
 
+.contenedor {
+	text-align: right;
+	margin: 15px;
+}
+  
+#boton {
+	display: inline-block;
+}
+
+/*ESTILOS PARA EL BOTÓN AGREGAR USUARIO */
+.buttonHome{
+    position: relative;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    background: #457B9D;
+    color: white;
+    cursor: pointer;
+    transition: .5s;
+    overflow: hidden;
+    font-size: 1rem;
+    border-radius: 5px;
+    width: 9rem;
+}
+

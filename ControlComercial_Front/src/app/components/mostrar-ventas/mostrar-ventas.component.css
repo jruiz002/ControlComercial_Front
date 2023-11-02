@@ -188,22 +188,6 @@ h4:after{
     width: 9rem;
 }
 
-/*ESTILOS PARA EL BOTÓN VER VENTAS */
-.buttonVentas{
-    position: relative;
-    padding: 10px 15px;
-    border: none;
-    outline: none;
-    background: green;
-    color: white;
-    cursor: pointer;
-    transition: .5s;
-    overflow: hidden;
-    font-size: 1rem;
-    border-radius: 5px;
-    width: 9rem;
-}
-
 /* ESTILOS PARA EL BOTÓN DE NUEVO USUARIO*/
 .buttonHome:hover{
     color: #fff(14, 14, 14);
@@ -214,7 +198,6 @@ h4:after{
 	display: flex;
 	flex-direction: row;
 	height: 2rem;
-	
 }
 
 .confButton{

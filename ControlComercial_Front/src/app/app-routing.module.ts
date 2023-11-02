@@ -6,6 +6,7 @@ import { PerfilOwnerComponent } from './components/perfil-owner/perfil-owner.com
 import { PerfilWorkerComponent } from './components/perfil-worker/perfil-worker.component';
 import { SedesComponent } from './components/sedes/sedes.component';
 import { EstadisticasComponent } from './components/estadisticas/estadisticas.component';
+import { MostrarVentasComponent } from './components/mostrar-ventas/mostrar-ventas.component';
 
 
 const routes: Routes = [
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path:"perfilOwner", component:PerfilOwnerComponent},
   {path:"perfilWorker", component:PerfilWorkerComponent},
   {path:"sedes", component:SedesComponent},
-  {path:"estadisticas", component:EstadisticasComponent}
+  {path:"estadisticas", component:EstadisticasComponent},
+  {path: "ventas", component: MostrarVentasComponent}
 ];
 
 @NgModule({
