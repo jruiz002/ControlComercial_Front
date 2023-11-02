@@ -38,4 +38,5 @@ export class ProductosService {
   eliminarProducto(idProducto: string){
     return this.http.delete(environment.baseUrl + "product/eliminarProducto/" + idProducto, {headers: this.httpOptions})
   }
+
 }

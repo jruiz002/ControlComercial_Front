@@ -61,7 +61,7 @@
             <td>{{product.amount}}</td>
             
             <td>
-                <button  type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalSellProduct"><img src="../../../assets/images/cart.png" alt="" class="img-icons"></button>
+                <button (click)="agregarIdProduct(product._id)" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalSellProduct"><img src="../../../assets/images/cart.png" alt="" class="img-icons"></button>
             </td>
             <td>
               <button (click)="verProducto(product._id)" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditarProducto"><img src="../../../assets/images/editar.png" alt="" class="img-icons"></button>
@@ -118,8 +118,8 @@
                           <h4>Realizar Venta</h4>
         
                           <span class="spanInfo">Cantidad a vender</span>
-                          <input name="cantidad" type="text" class="field" placeholder="Cantidad">
-                          <button  class="buttonModalNewUser mb-3" data-bs-dismiss="modal">Vender</button>
+                          <input [(ngModel)]="paramsVenta.amount" name="cantidad" type="text" class="field" placeholder="Cantidad">
+                          <button  (click)="agregarVentas()" class="buttonModalNewUser mb-3" data-bs-dismiss="modal">Vender</button>
                           <button style="background: #F8333C;" class="buttonModalNewUser" data-bs-dismiss="modal">Cancelar</button>
                       </div>
                   </div>

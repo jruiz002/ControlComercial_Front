@@ -4,6 +4,7 @@ import { NavBarLoginService } from 'src/app/services/nav-bar-login.service';
 import { ProductosService } from 'src/app/services/productos.service';
 import Swal from 'sweetalert2';
 import {Product} from "src/app/Models/Product"
+import { SalesService } from 'src/app/services/sales.service';
 
 
 @Component({
@@ -25,7 +26,8 @@ export class ProductosComponent implements OnInit{
   constructor(
     private productoRest: ProductosService,
     private activated: ActivatedRoute,
-    private navBarRest: NavBarLoginService
+    private navBarRest: NavBarLoginService,
+    private salesRest: SalesService,
 
   ){
     this.producto = new Product ("", "", 0, 0, "", "");
@@ -155,6 +157,35 @@ export class ProductosComponent implements OnInit{
     })
   }
 
+  paramsVenta = {
+    amount: 0,
+    idProduct: "",
+  }
 
+  agregarIdProduct(idProduct: string){
+    this.paramsVenta.idProduct = idProduct
+  }
+
+  agregarVentas(){
+    this.salesRest.agregarVentas(this.paramsVenta, this.idCampusDueño).subscribe({
+      next: (res: any) => {
+        Swal.fire({
+          title: res.message,
+          icon: 'success',
+          timer: 2000
+        });
+        this.verProductos();
+      },
+      error: (err) => {
+        Swal.fire({
+          title: err.error.message || err.error,
+          icon: 'error',
+          showConfirmButton: false,
+          timer: 2000
+        });
+      }
+    })
+
+  }
 }
 

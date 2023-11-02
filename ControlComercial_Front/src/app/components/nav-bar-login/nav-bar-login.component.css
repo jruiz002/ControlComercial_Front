@@ -92,7 +92,7 @@ button:hover span:nth-child(2){
 }
 
 .left{
-	/*background: url("../../../assets/images/modal_empresa.jpg") no-repeat center;*/
+	background: url("../../../assets/images/login.jpg") no-repeat center;
 	background-size: cover;
 	height: 100%;
 }
