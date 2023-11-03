@@ -132,14 +132,14 @@
                                     </div>
                                     <h4>Agregar Trabajador</h4>
                                     <span class="spanInfo">Username</span>
-                                    <input  name="nombre" type="String" class="field" placeholder="Username">
+                                    <input [(ngModel)]= "username"  name="nombre" type="String" class="field" placeholder="Username">
                                     <span class="spanInfo">Contraseña</span>
-                                    <input   name="precio" type="password" class="field" placeholder="Contraseña">
+                                    <input [(ngModel)]= "password"   name="password" type="password" class="field" placeholder="Contraseña">
                                     <span class="spanInfo">Teléfono</span>
-                                    <input   name="cantidad" type="text" class="field" placeholder="Teléfono">
+                                    <input [(ngModel)]= "phone"   name="phone" type="text" class="field" placeholder="Teléfono">
                                     <span class="spanInfo">Salario</span>
-                                    <input  name="proveedor" type="text" class="field" placeholder="Salario">
-                                    <button  class="buttonModalNewUser mb-3" data-bs-dismiss="modal">Agregar</button>
+                                    <input [(ngModel)]= "salary"  name="salary" type="text" class="field" placeholder="Salario">
+                                    <button (click)="agregarWorker()"  class="buttonModalNewUser mb-3" data-bs-dismiss="modal">Agregar</button>
                                     <button style="background: #F8333C;" class="buttonModalNewUser" data-bs-dismiss="modal">Cancelar</button>
                                 </div>
                             </div>

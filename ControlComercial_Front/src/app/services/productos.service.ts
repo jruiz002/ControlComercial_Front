@@ -39,4 +39,8 @@ export class ProductosService {
     return this.http.delete(environment.baseUrl + "product/eliminarProducto/" + idProducto, {headers: this.httpOptions})
   }
 
+  agregarWorker(params:{}, idCampus: string){
+    return this.http.post(environment.baseUrl + "owner/addWorker/" + idCampus, params, {headers: this.httpOptions})
+  }
+
 }

@@ -5,6 +5,7 @@ import { ProductosService } from 'src/app/services/productos.service';
 import Swal from 'sweetalert2';
 import {Product} from "src/app/Models/Product"
 import { SalesService } from 'src/app/services/sales.service';
+import { Worker } from 'src/app/Models/Worker';
 
 
 @Component({
@@ -16,8 +17,10 @@ export class ProductosComponent implements OnInit{
   //Arreglo Productos
   arrayProductos: any = [];
 
-  //Instancia de Producto
+  //Instancia de Producto y Worker
   producto: Product
+  worker: Worker
+
 
   //Id de la sede del que se desee ver productos (Inventario)
   idCampusDueño: any;
@@ -34,6 +37,7 @@ export class ProductosComponent implements OnInit{
     private router: Router
   ){
     this.producto = new Product ("", "", 0, 0, "", "");
+    this.worker = new Worker("","", "", "" ,"", 0, "");
   }
 
   ngOnInit(): void {
@@ -193,6 +197,41 @@ export class ProductosComponent implements OnInit{
 
   redirigirVentas(){
     this.router.navigateByUrl("/ventas/" + this.idCampusDueño)
+  }
+
+
+  //Variables para crear Worker
+  username: string = "";
+  password: string = "";
+  phone: string = "";
+  salary: number = 0;
+  idSede: string = "";
+
+
+  //Método para agregar un Trabajador siendo Dueño
+  agregarWorker(){
+    this.worker.setUsername(this.username);
+    this.worker.setPassword(this.password);
+    this.worker.setPhone(this.phone);
+    this.worker.setSalary(this.salary);
+    this.productoRest.agregarWorker(this.worker, this.idCampusDueño).subscribe({
+      next: (res: any) => {
+        Swal.fire({
+          title: res.message,
+          icon: 'success',
+          showConfirmButton: false
+        });
+        this.verProductos();
+      },
+      error: (err) => {
+        Swal.fire({
+          title: err.error.message || err.error,
+          icon: 'error',
+          showConfirmButton: false,
+          timer: 2000
+        });
+      }
+    })
   }
 }
 
