@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NavBarLoginService } from 'src/app/services/nav-bar-login.service';
 import { ProductosService } from 'src/app/services/productos.service';
 import Swal from 'sweetalert2';
@@ -22,13 +22,16 @@ export class ProductosComponent implements OnInit{
   //Id de la sede del que se desee ver productos (Inventario)
   idCampusDueño: any;
 
+  // Role
+  role: string = "";
+
 
   constructor(
     private productoRest: ProductosService,
     private activated: ActivatedRoute,
     private navBarRest: NavBarLoginService,
     private salesRest: SalesService,
-
+    private router: Router
   ){
     this.producto = new Product ("", "", 0, 0, "", "");
   }
@@ -46,7 +49,7 @@ export class ProductosComponent implements OnInit{
         this.verProductos()
       });
     }
-
+    this.role = this.navBarRest.getUser().role;
   }
 
   //Método para ver productos
@@ -186,6 +189,10 @@ export class ProductosComponent implements OnInit{
       }
     })
 
+  }
+
+  redirigirVentas(){
+    this.router.navigateByUrl("/ventas/" + this.idCampusDueño)
   }
 }
 

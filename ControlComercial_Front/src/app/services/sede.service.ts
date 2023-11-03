@@ -26,8 +26,8 @@ export class SedeService {
     return this.http.post(environment.baseUrl + "Campus/agregarSede/" + idOwner, params, {headers: this.htppOptions})
   }
 
-  editarSede(idSede: string, params: {}){
-    return this.http.put(environment.baseUrl + "Campus/editarSede/" + idSede, params, {headers: this.htppOptions})
+  editarSede(idSede: string, params: {}, idOwner: string){
+    return this.http.put(environment.baseUrl + "Campus/editarSede/" + idSede + "/" + idOwner, params, {headers: this.htppOptions})
   }
 
   verSede(nameSede: string){

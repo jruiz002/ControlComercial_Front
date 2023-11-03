@@ -70,4 +70,24 @@ export class PerfilOwnerComponent implements OnInit{
     })
   }
 
+  dataProveedores = {
+    suppliers: ""
+  }
+
+  agregarProveedores(){
+    this.perfilOwnerService.agregarProveedores(this.dataProveedores, this.navBarRest.getUser()._id).subscribe({
+      next: (res: any) => {
+        this.verProveedores()
+        Swal.fire({
+          title: res.message,
+          icon: 'success',
+          showConfirmButton: false
+        });
+      },
+      error: (err) => {
+        console.log(err)
+      }
+    })
+  }
+
 }

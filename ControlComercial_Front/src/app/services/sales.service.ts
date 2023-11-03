@@ -23,4 +23,8 @@ export class SalesService {
     return this.http.post(environment.baseUrl + "sale/agregarVentas/"+ idCampus, params, {headers: this.httpOptions})
   }
 
+  verVentas(idSede: string){
+    return this.http.get(environment.baseUrl + "sale/verVentas/" + idSede, {headers: this.httpOptions})
+  }
+
 }

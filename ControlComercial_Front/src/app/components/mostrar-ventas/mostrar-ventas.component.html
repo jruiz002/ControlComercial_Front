@@ -10,8 +10,6 @@
 
       <div class="horizontal">
           <p style="font-size: 50px;">VENTAS</p>
-  
-          
       </div>
       <div>
 
@@ -33,11 +31,11 @@
             </tr>
           </thead>
           <tbody >
-            <tr class="texto">
-              <td>{{1}}</td>
-              <td>{{1}}</td>
-              <td>{{1}}</td>
-              <td>Q. {{1}}</td>
+            <tr *ngFor="let venta of ventas" class="texto">
+              <td>{{venta.saleDate}}</td>
+              <td>{{venta.idProduct.name}}</td>
+              <td>{{venta.amount}}</td>
+              <td>Q. {{venta.total}}</td>
             </tr>
           </tbody>
         </table>

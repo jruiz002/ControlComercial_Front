@@ -217,6 +217,17 @@ h4{
     overflow: hidden;
     font-size: 1rem;
     border-radius: 5px;
-    width: 9rem;
+    width: 11rem;
 }
 
+
+/*----------*/
+.left{
+	background: url("../../../assets/images/modalVender.jpg") no-repeat center;
+	background-size: cover;
+	height: 100%;
+}
+
+.right{
+	padding: 25px 40px;
+}

@@ -91,7 +91,7 @@ export class SedesComponent implements OnInit{
   }
 
   editarSede(){
-    this.sedesRest.editarSede(this.updateSede._id, this.updateSede).subscribe({
+    this.sedesRest.editarSede(this.updateSede._id, this.updateSede, this.navBarLoginRest.getUser()._id).subscribe({
       next: (res: any) => {
         Swal.fire({
           title: res.message,

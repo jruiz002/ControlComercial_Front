@@ -2,15 +2,38 @@
         <app-nav-bar></app-nav-bar>
 
         <div class="contenedor">
-          <button id="boton" class="buttonHome me-3 mt-1 mb-3" data-bs-toggle="modal" data-bs-target="#modalAgregarProducto" 
+          <button id="boton" class="buttonHome me-3 mt-1 mb-3" data-bs-toggle="modal" data-bs-target="#exampleModalAddProveedor" 
               type="button">
               <span></span>
               <span></span>
               <span></span>
               <span></span>
-              Agregar 
+              Agregar Proveedor
               </button>
         </div>
+
+        <div class="modal fade" id="exampleModalAddProveedor" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="container">
+                    <div class="modal-content">
+                        <div class="contact-box">
+                            <div class="left"></div>
+                            <div class="right">
+                                <div class="position-relative">
+                                    <button type="button" class="btn-close position-absolute top-0 start-100 translate-middle" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <h4>Agregar el Proveedor</h4>
+              
+                                <span class="spanInfo">Nombre del Proveedor</span>
+                                <input [(ngModel)]="this.dataProveedores.suppliers"  name="Proveedor" type="text" class="field" placeholder="Proveedor">
+                                <button (click)="agregarProveedores()" class="buttonModalNewUser mb-3" data-bs-dismiss="modal">Agregar</button>
+                                <button style="background: #F8333C;" class="buttonModalNewUser" data-bs-dismiss="modal">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      </div>
    
         <div class="body_card ">
             <div class="mb-5">

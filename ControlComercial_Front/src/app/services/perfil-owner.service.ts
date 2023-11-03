@@ -30,6 +30,9 @@ export class PerfilOwnerService {
     return this.http.put(environment.baseUrl + "owner/editProfile/" + idOwner, params, {headers: this.htppOptions})
   }
   
+  agregarProveedores(params: {}, idOwner: string){
+    return this.http.post(environment.baseUrl + "owner/agregarProveedor/" + idOwner, params, {headers: this.htppOptions})
+  }
 
 
 }
