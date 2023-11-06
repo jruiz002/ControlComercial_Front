@@ -14,6 +14,8 @@ import { EstadisticasComponent } from './components/estadisticas/estadisticas.co
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MostrarVentasComponent } from './components/mostrar-ventas/mostrar-ventas.component';
+import { GraficaBarrasComponent } from './components/grafica-barras/grafica-barras.component';
+import { ChartsModule } from '@rinminase/ng-charts';
 
 @NgModule({
   declarations: [
@@ -26,13 +28,15 @@ import { MostrarVentasComponent } from './components/mostrar-ventas/mostrar-vent
     PerfilWorkerComponent,
     SedesComponent,
     EstadisticasComponent,
-    MostrarVentasComponent
+    MostrarVentasComponent,
+    GraficaBarrasComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

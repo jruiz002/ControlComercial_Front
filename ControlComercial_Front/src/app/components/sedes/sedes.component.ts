@@ -138,6 +138,10 @@ export class SedesComponent implements OnInit{
     })
   }
 
+  redirigirEstadisticas(){
+    this.router.navigateByUrl("/grafica")
+  }
+
   
 
 

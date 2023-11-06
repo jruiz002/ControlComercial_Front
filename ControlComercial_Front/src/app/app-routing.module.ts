@@ -7,6 +7,7 @@ import { PerfilWorkerComponent } from './components/perfil-worker/perfil-worker.
 import { SedesComponent } from './components/sedes/sedes.component';
 import { EstadisticasComponent } from './components/estadisticas/estadisticas.component';
 import { MostrarVentasComponent } from './components/mostrar-ventas/mostrar-ventas.component';
+import { GraficaBarrasComponent } from './components/grafica-barras/grafica-barras.component';
 
 
 const routes: Routes = [
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path:"perfilWorker", component:PerfilWorkerComponent},
   {path:"sedes", component:SedesComponent},
   {path:"estadisticas", component:EstadisticasComponent},
-  {path: "ventas/:idSede", component: MostrarVentasComponent}
+  {path: "ventas/:idSede", component: MostrarVentasComponent},
+  {path: "grafica", component: GraficaBarrasComponent}
 ];
 
 @NgModule({
